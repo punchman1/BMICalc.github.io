@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+<body>
+     <div class="container">
+          <div class="card-header text-center">BMI Calculator</div>
+          <div class="card-body">
+          <form class="w-50 m-auto" onsubmit="return false">
+               <div class="form-group">
+                    <label>Weigth</label>
+                    <input type="number" name="" placeholder="Weight in KG" required id="Weight" class="form-control">
+               </div>
+               <div class="form-group">
+                    <label>Heigth</label>
+                    <input type="number" name="" placeholder="
+                    Height in feet" required id="Height" class="form-control">
+               </div>
+               <div class="form-group">
+                    <label>BMI Value</label>
+                    <input type="number" name="" id="Bmi" class="form-control">
+               </div>
+               <div>
+                    <button type="submit" class="btn btn-success" onclick="getbmivalue()">Check BMI</button>
+               </div>
+          </form>
+     </div>
+          <div class="card-footer text-center">A healthy BMI ranges between 19 and 25.</div>
+     </div>
+
+     <script>
+          function getbmivalue()
+          {
+          var weight=document.getElementById('Weight').value;
+          var height=document.getElementById('Height').value;
+          height=height*12*0.025; //how height in meter
+
+          var newbmivalue=weight/(Math.pow(height,2));
+          newbmivalue=Math.round(newbmivalue);
+          document.getElementById('Bmi').value=newbmivalue;
+          }
+
+     </script>
+    <!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+ 
+</body>
+</html>
